@@ -1,0 +1,39 @@
+<%- include("partials/header.ejs") %>
+
+    
+<div class="col-12 my-5 container ">
+    <h1 class="d-flex justify-content-center">Blog-G-D-Blog</h1>
+    <div class="my-5 d-flex justify-content-center"> 
+        <a href="/add" class="btn btn-primary">Create Blog</a>
+    </div>
+</div>
+
+<div class="container my-5 col-6">
+    <div>
+        <% if (count != 0) { %>
+            <ul>
+            <% for (let i = 0; i < count; i++) { %>
+                <li><a href="post/<%= posts.indexOf(posts[i]); %>" id="post"><%= posts[i].key %></a></li>
+            <% }%>
+            </ul>
+        <% } else { %>
+            <h3>Would you like to add a post</h3>
+            
+        <% } %>  
+    </div>
+    
+    
+    <div>
+        <% if (count != 0) { %>
+            
+        <% } else { %>
+            <p>Nothing to Read</p> 
+        <% } %>
+    </div>
+</div>
+
+
+    
+
+    
+<%- include("partials/footer.ejs") %>  

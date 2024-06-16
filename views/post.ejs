@@ -1,0 +1,60 @@
+<%- include("partials/header.ejs") %>
+
+    
+
+<div class="col-12 my-5 container ">
+    <h1 class="d-flex justify-content-center">Blog-G-D-Blog</h1>
+</div>
+
+
+<div id="blog" style="display:block" class="container">
+    <div c>
+    <% if (count != 0) { %>
+        <h3><%= title.key %></h3>
+        <p><%= title.value %></p>
+    <% } else { %>
+        <h1>Nothing to Read</h1>
+    <% } %>
+    </div>
+    <div class=" row my-4 d-flex justify-content-center"> 
+        <div class="col-3">
+            <form action="/delete/<%= posts.indexOf(title); %>" method="post">
+                <input type="submit" value="Delete" class="btn btn-danger col-12">
+            </form>
+        </div>
+        <div class="col-3">
+            <button onclick="ShowAndHide()" class="btn btn-success col-12">Edit</button>
+        </div>
+        
+    </div>
+    
+    <div class="mb-5 d-flex justify-content-center"> 
+        <a href="/add" class="btn btn-primary">Create Blog</a>
+    </div>
+</div>
+
+
+<div id="editBlog" style="display:none">
+    <form action="/edit/<%= posts.indexOf(title); %>" method="POST" class="hidden">
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Blog Title</label>
+            <input type="text" class="form-control"  value="<%= title.key %>" name="blogTitle">
+         </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Blog Text Area</label>
+            <textarea class="form-control" rows="10" name="blogPost" placeholder="<%= title.value %>"></textarea>
+        </div>
+    
+        <input type="submit" value="Save" class="btn btn-primary">
+    
+    </form>
+</div>
+
+
+
+
+    
+
+    
+<%- include("partials/footer.ejs") %>  

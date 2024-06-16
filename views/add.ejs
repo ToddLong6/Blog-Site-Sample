@@ -1,0 +1,31 @@
+<%- include("partials/header.ejs") %>
+
+    
+
+<div class="col-12 my-5 container ">
+    <h1 class="d-flex justify-content-center">Blog-G-D-Blog</h1>
+</div>
+
+<form action="/Create" method="POST">
+    <div class="container mb-4">
+        <div class="justify-content-center">
+            <div class="mb-4">
+                <label for="exampleFormControlInput1" class="form-label">Blog Title</label>
+                <input type="text" class="form-control"  placeholder="Blog Title" name="blogTitle">
+            </div>
+            <div class="mb-3 ">
+                <label for="exampleFormControlTextarea1" class="form-label">Blog Text Area</label>
+                <textarea class="form-control" rows="10" name="blogPost"></textarea>
+            </div>
+
+            <div class="my-5 d-flex justify-content-center">
+                <input type="submit" value="Create Post" class="btn btn-primary">
+            </div>
+        </div>
+    </div>
+</form>
+
+
+    
+    
+<%- include("partials/footer.ejs") %>  
